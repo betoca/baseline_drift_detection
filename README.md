@@ -40,11 +40,6 @@ Below are the assets that are used to run this example:
 
 The `job_submit` folder includes files that can send a job to MOC directly. you can update the global environment variables in `job_submit/submit.py` to point to your instance and run different types of jobs:
 
-```python
-BASE_URL = "http://my.modelop.center.instance"
-MODEL_FILENAME = "monitor.py"
-JOB_FILENAME = "job_submitter/german_credit_data_drift_job.json"
-```
 
 Then run `submit.py` to submit the job:
 
