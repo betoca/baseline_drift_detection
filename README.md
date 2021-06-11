@@ -33,57 +33,8 @@ Below are the assets that are used to run this example:
 9. Create a drift detection job by firing the CronTriggeredDataDriftTest MLC using the URL and JSON payload below:
     - URL: http://mlc.mocaasin.modelop.center/rest/signal
     - JSON payload (**note that `MODEL_ID.value` must be updated**):
-      ```json
-      {
-          "name": "com.modelop.mlc.definitions.Signals_MODEL_DATA_DRIFT_TEST",
-          "variables": {
-              "MODEL_ID": {
-                  "value": "5a31b3c6-f033-4948-b433-bae6656baa26"
-              },
-              "OUTPUT_FILE": {
-                  "value": {
-                      "assetType": "EXTERNAL_FILE",
-                      "assetRole": "UNKNOWN",
-                      "fileUrl": "hdfs:///hadoop/demo/drift_analysis.csv",
-                      "filename": "drift_analysis.csv",
-                      "fileFormat": "CSV",
-                      "repositoryInfo": {
-                          "repositoryType": "HDFS_REPOSITORY",
-                          "host": "",
-                          "port": 0
-                      }
-                  }
-              }
-          }
-      }
-      ```
 10. Wait for the created job to enter a `COMPLETE` state
 11. Navigate to the base model snapshot's test results and verify that the test results look similar:
-    ```json
-    {
-      "number_existing_credits": 0.1661573547955825,
-      "number_people_liable": 0.15643137378956762,
-      "score": 0.1374666427619285,
-      "label_value": 0.12909200180788885,
-      "present_residence_since": 0.09589797018577487,
-      "installment_rate": 0.0923431071984353,
-      "purpose": 0.08901857345091589,
-      "credit_amount": 0.06579786015199766,
-      "age_years": 0.062297942889786954,
-      "present_employment_since": 0.06092273471356515,
-      "duration_months": 0.05571648405502104,
-      "savings_account": 0.04709760284899042,
-      "credit_history": 0.03574135542427669,
-      "property": 0.03477985804578699,
-      "telephone": 0.026242637204975147,
-      "job": 0.024366893631309054,
-      "foreign_worker": 0.01806487817678789,
-      "checking_status": 0.01600519274897279,
-      "installment_plans": 0.015781433298469323,
-      "housing": 0.010258094196074643,
-      "debtors_guarantors": 0.004689237456452252
-    }
-    ```
 
 ### Manual Tests
 
